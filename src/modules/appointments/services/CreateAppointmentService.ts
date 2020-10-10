@@ -12,10 +12,9 @@ interface IRequest {
 
 @injectable()
 class CreateAppointmentService {
-
   constructor(
     @inject('AppointmentsRepository')
-    private appointmentsRepository: IAppointmentsRepository
+    private appointmentsRepository: IAppointmentsRepository,
   ) { }
 
   public async execute({ date, provider_id }: IRequest): Promise<Appointment> {

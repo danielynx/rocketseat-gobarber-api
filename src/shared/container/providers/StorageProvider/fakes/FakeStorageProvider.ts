@@ -10,7 +10,7 @@ class DiskStorageProvider implements IStorageProvider {
   }
 
   public async deleteFile(file: string): Promise<void> {
-    this.storage = this.storage.filter(storageFile => storageFile != file);
+    this.storage = this.storage.filter(storageFile => storageFile !== file);
   }
 }
 

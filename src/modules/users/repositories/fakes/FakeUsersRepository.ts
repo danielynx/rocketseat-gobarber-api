@@ -1,7 +1,7 @@
 import { uuid } from 'uuidv4';
 
 import User from '@modules/users/infra/typeorm/entities/User';
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 
 class UsersRepository implements IUsersRepository {
@@ -22,7 +22,7 @@ class UsersRepository implements IUsersRepository {
   public async create(data: ICreateUserDTO): Promise<User> {
     const user = new User();
 
-    Object.assign(user, { id: uuid(), }, data);
+    Object.assign(user, { id: uuid() }, data);
 
     this.users.push(user);
 
@@ -36,7 +36,6 @@ class UsersRepository implements IUsersRepository {
 
     return user;
   }
-
 }
 
 export default UsersRepository;

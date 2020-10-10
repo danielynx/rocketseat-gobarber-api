@@ -43,9 +43,10 @@
     "@typescript-eslint/interface-name-prefix": [
       "error",
       {
-        "prefixWithI": "always",
+        "prefixWithI": "always"
       }
     ],
+    "no-useless-constructor": "off",
     "no-console": "off"
   },
   "settings": {

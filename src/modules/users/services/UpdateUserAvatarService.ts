@@ -20,7 +20,7 @@ class UpdateUserAvatarService {
     private usersRepository: IUsersRepository,
 
     @inject('StorageProvider')
-    private storageProvider: IStorageProvider
+    private storageProvider: IStorageProvider,
   ) { }
 
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
