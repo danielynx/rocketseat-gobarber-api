@@ -1,6 +1,6 @@
 import { container } from 'tsyringe';
 
-import '@modules/user/providers';
+import '@modules/users/providers';
 import '@shared/container/providers';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
