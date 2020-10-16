@@ -10,7 +10,7 @@ This is the API to support a project that will manage barbershop scheduling.
   - Learned about the three types of Javascript Components that make connection with database, based on the level of abstraction.
   - Utilized TypeOrm to connect with the Postgres and for mapped the models classes that representing database tables.
   - Installed Postgres Database with docker and connect with them using DBeaver client.
-  - Learned how connect with postgres using TypeOrm component.
+  - Learned how connect with Postgres using TypeOrm component.
   - Use Migrations, Repositories and Entities from TypeORM.
   - Created user migration and model.
   - Created a migration to make user as provider join with appointments.
