@@ -20,3 +20,9 @@ This is the API to support a project that will manage barbershop scheduling.
   - User authentication using JWT.
   - Developed the route to change user avatar image.
   - Created a global exception handler.
+
+
+## Test Coverage Report (Jest library)
+
+  ![SignIn](readme/screenshot-1.png)
+
