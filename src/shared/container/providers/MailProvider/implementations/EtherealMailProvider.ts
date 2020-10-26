@@ -1,6 +1,7 @@
 import nodemailer, { SendMailOptions } from 'nodemailer';
 import { injectable, inject } from 'tsyringe';
 
+import mailconfig from '@config/mail';
 import ISendMailDTO from '@shared/container/providers/MailProvider/dtos/ISendMailDTO';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import IMailTemplateProvider from '@shared/container/providers/MailTemplateProvider/models/IMailTemplateProvider';
@@ -38,10 +39,12 @@ export default class EtherealMailProvider implements IMailProvider {
           },
         });
 
+        const { name, email } = mailconfig.defaults.from;
+
         const message: SendMailOptions = {
           from: {
-            name: from?.name || 'Equipe GoBarber',
-            address: from?.email || 'equipe@gobarber.com.br',
+            name: from?.name || name,
+            address: from?.email || email,
           },
           to: {
             name: to.name,
@@ -59,6 +62,7 @@ export default class EtherealMailProvider implements IMailProvider {
 
           console.log('Message sent: %s', info.messageId);
           console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
           resolve();
         });
       });
