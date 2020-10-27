@@ -39,7 +39,7 @@ export default class SESMailProvider implements IMailProvider {
       const transporter = nodemailer.createTransport({
         SES: new aws.SES({
           apiVersion: '2010-12-01',
-          region: 'eu-west-2',
+          region: mailconfig.config.ses.region,
         }),
       });
 

@@ -6,6 +6,12 @@ interface IMailConfig {
       email: string;
     };
   };
+  config: {
+    ethereal: {};
+    ses: {
+      region: string;
+    };
+  };
 }
 
 export default {
@@ -14,6 +20,12 @@ export default {
     from: {
       name: process.env.MAIL_DEFAULT_FROM_NAME,
       email: process.env.MAIL_DEFAULT_FROM_EMAIL,
+    },
+  },
+  config: {
+    ethereal: {},
+    ses: {
+      region: 'eu-west-2',
     },
   },
 } as IMailConfig;

@@ -1,19 +1,51 @@
 import path from 'path';
 import crypto from 'crypto';
-import multer from 'multer';
+import multer, { StorageEngine } from 'multer';
 
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
+interface IUploadConfig {
+  driver: 's3' | 'disk';
+  tmpFolder: string;
+  uploadsFolder: string;
+  multer: {
+    storage: StorageEngine;
+  };
+  config: {
+    disk: {
+      url: string;
+    };
+    s3: {
+      region: string;
+      bucket: string;
+      url: string;
+    };
+  };
+}
+
 export default {
+  driver: process.env.STORAGE_DRIVER || 'disk',
   tmpFolder,
   uploadsFolder: path.resolve(tmpFolder, 'uploads'),
-  storage: multer.diskStorage({
-    destination: tmpFolder,
-    filename(request, file, callback) {
-      const fileHash = crypto.randomBytes(10).toString('hex');
-      const fileName = `${fileHash}-${file.originalname}`;
+  multer: {
+    storage: multer.diskStorage({
+      destination: tmpFolder,
+      filename(request, file, callback) {
+        const fileHash = crypto.randomBytes(10).toString('hex');
+        const fileName = `${fileHash}-${file.originalname}`;
 
-      return callback(null, fileName);
+        return callback(null, fileName);
+      },
+    }),
+  },
+  config: {
+    disk: {
+      url: `${process.env.APP_API_URL}/files`,
     },
-  }),
-};
+    s3: {
+      region: 'us-east-1',
+      bucket: 'app-gobarber-daniel-backes',
+      url: 'https://app-gobarber-daniel-backes.s3.amazonaws.com',
+    },
+  },
+} as IUploadConfig;
