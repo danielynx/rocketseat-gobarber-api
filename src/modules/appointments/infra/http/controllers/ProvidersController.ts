@@ -13,6 +13,13 @@ export default class ProvidersController {
       user_id,
     });
 
-    return response.json(providers);
+    const providerTransformed = providers.map(provider => {
+      delete provider.avatar;
+      delete provider.password;
+
+      return provider;
+    });
+
+    return response.json(providerTransformed);
   }
 }
