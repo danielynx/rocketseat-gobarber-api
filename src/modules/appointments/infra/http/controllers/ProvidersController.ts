@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import ListProvidersService from '@modules/appointments/services/ListProvidersService';
 
@@ -13,13 +14,6 @@ export default class ProvidersController {
       user_id,
     });
 
-    const providerTransformed = providers.map(provider => {
-      delete provider.avatar;
-      delete provider.password;
-
-      return provider;
-    });
-
-    return response.json(providerTransformed);
+    return response.json(classToClass(providers));
   }
 }

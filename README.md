@@ -31,10 +31,10 @@ This is the API to support a project that will manage barbershop scheduling.
         "id": "string",
         "name": "string",
         "email": "string",
-        "avatar": null,
+        "avatar": "string",
         "created_at": "Timestamp ISO-8601",
         "updated_at": "Timestamp ISO-8601",
-        "avatar_url": null
+        "avatar_url": "string"
       },
       "token": "string"
     }
@@ -174,7 +174,16 @@ This is the API to support a project that will manage barbershop scheduling.
         "user_id": "string",
         "date": "Timestamp ISO-8601",
         "created_at": "Timestamp ISO-8601",
-        "updated_at": "Timestamp ISO-8601"
+        "updated_at": "Timestamp ISO-8601",
+        "user": {
+          "id": "string",
+          "name": "string",
+          "email": "string",
+          "avatar": "string",
+          "created_at": "Timestamp ISO-8601",
+          "updated_at": "Timestamp ISO-8601",
+          "avatar_url": "string"
+        }
       }
     ]
   }
@@ -219,8 +228,10 @@ This is the API to support a project that will manage barbershop scheduling.
         "id": "string",
         "name": "string",
         "email": "string",
+        "avatar": "string",
         "created_at": "Timestamp ISO-8601",
-        "updated_at": "Timestamp ISO-8601"
+        "updated_at": "Timestamp ISO-8601",
+        "avatar_url": "string"
       }
     ]
   }
