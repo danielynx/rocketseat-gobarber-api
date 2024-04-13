@@ -1,0 +1,627 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-04-27T23:11:55.787Z",
+  "__export_source": "insomnia.desktop.app:v2021.2.2",
+  "resources": [
+    {
+      "_id": "req_ed657914f39d43d583a232708976758a",
+      "parentId": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "modified": 1612653109905,
+      "created": 1595866824605,
+      "url": "{{ base_url }}/users",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Daniel B.\",\n\t\"email\": \"danielynx@protonmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1aa649957b3543b8b55ff6af7917932c",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1595541277869,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1595866808887,
+      "created": 1595866808887,
+      "name": "Users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595866808887,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "parentId": null,
+      "modified": 1596072009737,
+      "created": 1595866173550,
+      "name": "GoBarber",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d6b3cfd273c54add9d1045b2d8b80541",
+      "parentId": "fld_271e287251014a4c9fab3fc6d2fcfc99",
+      "modified": 1608692061662,
+      "created": 1602706154089,
+      "url": "{{ base_url }}/passwords/forgot",
+      "name": "Forgot",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"danielynx@protonmail.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1aa649957b3543b8b55ff6af7917932c",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1595378804704.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_271e287251014a4c9fab3fc6d2fcfc99",
+      "parentId": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "modified": 1604449014325,
+      "created": 1602984259033,
+      "name": "Password",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595541277819,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_aeb644e2037b40e993db6750e756baa8",
+      "parentId": "fld_271e287251014a4c9fab3fc6d2fcfc99",
+      "modified": 1603409254436,
+      "created": 1602709370479,
+      "url": "{{ base_url }}/passwords/reset",
+      "name": "Reset",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\t\n\t\"password\": \"12345678\",\t\n\t\"password_confirmation\": \"12345678\",\n\t\"token\": \"587446b9-9c40-4ee8-9851-2a21a3b6668a\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1aa649957b3543b8b55ff6af7917932c",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1595378804654.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f87c55214d1c4edda0b4acf0891ecd0d",
+      "parentId": "fld_eb58247b92c448a5896116bf82314677",
+      "modified": 1604619078012,
+      "created": 1602984587828,
+      "url": "{{ base_url }}/profile",
+      "name": "show",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}"
+      },
+      "metaSortKey": -1595460041311.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_eb58247b92c448a5896116bf82314677",
+      "parentId": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "modified": 1604449017060,
+      "created": 1602984313505,
+      "name": "Profile",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595541277769,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_73a240eba0054f1595f29a26465decc5",
+      "parentId": "fld_eb58247b92c448a5896116bf82314677",
+      "modified": 1608690531238,
+      "created": 1602984374457,
+      "url": "{{ base_url }}/profile",
+      "name": "Update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Daniel B.\",\n\t\"email\": \"danielynx@protonmail.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1aa649957b3543b8b55ff6af7917932c",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}"
+      },
+      "metaSortKey": -1595460041261.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9c71102e9d38444c8093c30d0b23b1f3",
+      "parentId": "fld_78bf7bf6b2ae4e5db920a38ca24f886d",
+      "modified": 1608688814513,
+      "created": 1595963086212,
+      "url": "{{ base_url }}/users/avatar",
+      "name": "Update",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "fileName": "/home/daniel/Downloads/6ae9393e597e3b2a1ff9ec1a34ee2c46.jpeg",
+            "id": "pair_154cb6af44ef4ead83994fc1ea41ebf3",
+            "name": "avatar",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_7562d738f0d446f686b569fe523a7284",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "authentication": {
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1595963086212,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_78bf7bf6b2ae4e5db920a38ca24f886d",
+      "parentId": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "modified": 1604449019907,
+      "created": 1602984333807,
+      "name": "Avatar",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595541277719,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_030a8bd06c75408f967a89db8462f4c5",
+      "parentId": "fld_ff617f0d1646458daa4b9ebd340983e6",
+      "modified": 1614212698420,
+      "created": 1595898333295,
+      "url": "{{ base_url }}/sessions",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\t\n\t\"email\": \"danielynx@protonmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1aa649957b3543b8b55ff6af7917932c",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1595541277869,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ff617f0d1646458daa4b9ebd340983e6",
+      "parentId": "fld_332940c5e7664a3bb634c8026d6ab516",
+      "modified": 1604449044326,
+      "created": 1595898333281,
+      "name": "Sessions",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595541277669,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_965bcf0696b448d882fd0d25611f479e",
+      "parentId": "fld_b63b596107a3437487c38ecaf2f39b83",
+      "modified": 1604619058575,
+      "created": 1603138548477,
+      "url": "{{ base_url }}/providers",
+      "name": "List",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1593392053466,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b63b596107a3437487c38ecaf2f39b83",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1604449185506,
+      "created": 1603138524190,
+      "name": "Providers",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595866512493,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_223c9ed2972c40538d0a3c69fb7777b5",
+      "parentId": "fld_b63b596107a3437487c38ecaf2f39b83",
+      "modified": 1604619052729,
+      "created": 1603241105753,
+      "url": "{{ base_url }}/providers/2603d014-ba17-418d-9a4f-db596dce83ef/month-availability",
+      "name": "Month Availability",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "month",
+          "value": "11",
+          "description": "",
+          "id": "pair_a0c8272f8bc54b84932699dfd89b4a7b",
+          "disabled": false
+        },
+        {
+          "name": "year",
+          "value": "2020",
+          "description": "",
+          "id": "pair_14de7d68a111471898f9d8ae19ecdd97",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1592479914529,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5b7fa82e30b24b34bf1ed34eb6f1dfc6",
+      "parentId": "fld_b63b596107a3437487c38ecaf2f39b83",
+      "modified": 1604619047468,
+      "created": 1603241319712,
+      "url": "{{ base_url }}/providers/2603d014-ba17-418d-9a4f-db596dce83ef/day-availability",
+      "name": "Day Availability",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "day",
+          "value": "20",
+          "description": "",
+          "id": "pair_c7df5c2de24d4d99bfa897bf4e99bd14",
+          "disabled": false
+        },
+        {
+          "name": "month",
+          "value": "10",
+          "description": "",
+          "id": "pair_664b4acc987a4e129a9612421e98c6da"
+        },
+        {
+          "name": "year",
+          "value": "2020",
+          "description": "",
+          "id": "pair_6ffb6c65afeb4bcf833c3cd5c192cd58"
+        }
+      ],
+      "headers": [],
+      "authentication": {
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1592023845060.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f7effa7b2d814fb9b270039ac0e1d450",
+      "parentId": "fld_86fa107d77a34cb798c8c38a521c2e8f",
+      "modified": 1616270733049,
+      "created": 1595866224398,
+      "url": "{{ base_url }}/appointments/provider/me",
+      "name": "Provider (Me)",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "day",
+          "value": "26",
+          "description": "",
+          "id": "pair_06769bf32d1c4d6880e6f168a5d7c260",
+          "disabled": false
+        },
+        {
+          "name": "month",
+          "value": "11",
+          "description": "",
+          "id": "pair_89fd00213e6647c58a0397cf3b78a65f"
+        },
+        {
+          "name": "year",
+          "value": "2020",
+          "description": "",
+          "id": "pair_68d7e2f16b4947b59ed56fd39a25d4bc"
+        }
+      ],
+      "headers": [],
+      "authentication": {
+        "disabled": false,
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1595866224398,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_86fa107d77a34cb798c8c38a521c2e8f",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1595866216099,
+      "created": 1595866216099,
+      "name": "Appointments",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1595866216099,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_eddf4555b96b4e2699ac61b45ac4d1a1",
+      "parentId": "fld_86fa107d77a34cb798c8c38a521c2e8f",
+      "modified": 1616274072036,
+      "created": 1616274059837,
+      "url": "{{ base_url }}/appointments/user/me",
+      "name": "User (Me)",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "disabled": false,
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1595703751133.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_270f7fac6eb44424ade7368c61787a7e",
+      "parentId": "fld_86fa107d77a34cb798c8c38a521c2e8f",
+      "modified": 1616275280141,
+      "created": 1595866382571,
+      "url": "{{ base_url }}/appointments",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"provider_id\": \"bc8edb03-2d03-4774-85af-d032b96dad59\",\n\t\"date\": \"2023-03-02 17:00:00\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_7505a39e593e4624bf6b19e06a084d83",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "token": "{% response 'body', 'req_030a8bd06c75408f967a89db8462f4c5', 'b64::JC50b2tlbg==::46b', 'no-history', 3000 %}",
+        "type": "bearer"
+      },
+      "metaSortKey": -1595216331340,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_5eb59fa62acc5fcabfd454185633f9b8ccab7098",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1595866327434,
+      "created": 1595866173611,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1595866173611,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_5eb59fa62acc5fcabfd454185633f9b8ccab7098",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1595866173613,
+      "created": 1595866173613,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_c9b7cb6a5af84b4996a2bfc3c87c013b",
+      "parentId": "wrk_ab604f11c42445a49621cfd6a3ddfab6",
+      "modified": 1595866173555,
+      "created": 1595866173555,
+      "fileName": "GoBarber Project",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_a31e8aba6ba0487490085f6c311416ba",
+      "parentId": "env_5eb59fa62acc5fcabfd454185633f9b8ccab7098",
+      "modified": 1604449647250,
+      "created": 1595866298112,
+      "name": "Development",
+      "data": {
+        "base_url": "http://localhost:3333"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": "#69cb67",
+      "isPrivate": false,
+      "metaSortKey": 1595866298112,
+      "_type": "environment"
+    },
+    {
+      "_id": "env_7158a85408ca44029bae92a706d76608",
+      "parentId": "env_5eb59fa62acc5fcabfd454185633f9b8ccab7098",
+      "modified": 1606865112526,
+      "created": 1604448861030,
+      "name": "Production",
+      "data": {
+        "base_url": "https://api.gobarber.danielynx.dev"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": "#cb6780",
+      "isPrivate": false,
+      "metaSortKey": 1604448861030,
+      "_type": "environment"
+    }
+  ]
+}
